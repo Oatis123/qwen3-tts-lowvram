@@ -1,0 +1,21 @@
+qwen3-tts-lowvram
+Copyright 2026 Oatis123
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This project is an independent add-on. It is not affiliated with, endorsed by, or
+sponsored by Alibaba Group, the Qwen team, or the authors of faster-qwen3-tts.
+"Qwen" is a trademark of its respective owner and is used here only to describe
+compatibility.
+
+This repository contains no source code or model weights from the projects below.
+It depends on them at runtime; they are installed separately and remain under their
+own licenses (details in THIRD_PARTY_NOTICES.md):
+
+  Qwen3-TTS (code and model weights) - Copyright Alibaba Cloud / Qwen team
+    https://github.com/QwenLM/Qwen3-TTS - Apache License 2.0
+  faster-qwen3-tts - Copyright (c) 2026 Andres Marafioti
+    https://github.com/andimarafioti/faster-qwen3-tts - MIT License
+
+qwen3_tts_lowvram.trim_decode_context() wraps a private method of faster-qwen3-tts
+(FasterQwen3TTS._prepare_generation) at runtime without copying or modifying its code.

@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qwen3-tts-lowvram"
+version = "0.1.0"
+description = "Cut Qwen3-TTS (faster-qwen3-tts) VRAM roughly in half without changing the voice"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Oatis123" }]
+requires-python = ">=3.10"
+dependencies = [
+    # optimize() patches internals of this exact release; re-run bench/ before bumping
+    "faster-qwen3-tts==0.4.0",
+    "torch>=2.5",
+]
+keywords = ["qwen3-tts", "tts", "text-to-speech", "voice-cloning", "vram", "cuda"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
+
+[project.optional-dependencies]
+server = ["fastapi", "uvicorn", "pydantic", "sounddevice", "numpy"]
+bench = ["soundfile", "numpy"]
+quant = ["torchao"]
+
+[project.urls]
+Repository = "https://github.com/Oatis123/qwen3-tts-lowvram"
+
+[tool.setuptools]
+packages = ["qwen3_tts_lowvram"]

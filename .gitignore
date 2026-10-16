@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# model cache, voices and bench output stay local
+hf_cache/
+*.wav
+*.mp3
+*.flac
+bench/out/
+bench/logs/
+bench/index.html
